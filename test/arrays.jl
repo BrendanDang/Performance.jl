@@ -1,4 +1,4 @@
-using Performance
+using .Performance
 using BenchmarkTools
 using Test
 
