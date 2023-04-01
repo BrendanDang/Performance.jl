@@ -11,7 +11,7 @@ function sequence_of_three(start::Union{Int64,Float64})
     return out
 end
 
-function alternate_items(nrepeats::Integer, item1::Int64, item2::Int64)
+function alternate_items(nrepeats::Integer, item1::Union{Missing,Int64}, item2::Int64)
     if typeof(item1) == Int64 && typeof(item2) == Int64
         out = Vector{Int64}()
     else
