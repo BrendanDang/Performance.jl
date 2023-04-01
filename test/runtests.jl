@@ -1,4 +1,4 @@
-using Performance
+using .Performance
 using Test
 
 ntests_finished = 4   # increment this counter to run the next set of tests

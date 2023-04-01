@@ -1,4 +1,4 @@
-using Performance
+using .Performance
 using Test
 
 @testset "globals" begin
@@ -16,13 +16,13 @@ using Test
 
     # The next two tests should pass even at the outset
     @test get_homedir() == "wrong"
-    set_homedir(ENV["HOME"])
-    @test get_homedir() == ENV["HOME"]
+    set_homedir(ENV["CLASSPATH"])       # "HOME" key did not exist for me, so I replaced it with "CLASSPATH"
+    @test get_homedir() == ENV["CLASSPATH"]
     # This one will fail. But you can't make the value constant and still update it!
     # Find a way to fix it. Hint: `?Ref` or use an array (Refs are like single-element arrays)
     # Explanation: the *container* can be constant, but the *contents* can be modified.
     # (Think of the container like a box: you can take something out of the box and put something different
     #  inside it, but the box itself is unchanged.)
     # If the container type specifies the type of the contents, Julia's type-inference will be happy.
-    @test @inferred(get_homedir()) == ENV["HOME"]   # again, this will likely require restarting Julia to test your fix
+    @test @inferred(get_homedir()) == ENV["CLASSPATH"]   # again, this will likely require restarting Julia to test your fix
 end
